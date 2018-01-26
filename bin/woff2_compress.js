@@ -9,7 +9,7 @@ const compress = require('../compress');
 
 ////////////////////////////////////////////////////////////////////////////////
 
-var cli = new argparse.ArgumentParser({
+var parser = new argparse.ArgumentParser({
   prog:     'woff2_compress.js',
   version:  require('../package.json').version,
   addHelp:  true
@@ -32,4 +32,6 @@ try {
 
 compress(input).then(woff2 => {
   fs.writeFileSync(args.outfile[0], woff2);
+}, error => {
+  console.log(error);
 });

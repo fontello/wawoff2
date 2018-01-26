@@ -9,7 +9,7 @@ const decompress = require('../decompress');
 
 ////////////////////////////////////////////////////////////////////////////////
 
-var cli = new argparse.ArgumentParser({
+var parser = new argparse.ArgumentParser({
   prog:     'woff2_decompress.js',
   version:  require('../package.json').version,
   addHelp:  true
@@ -32,4 +32,6 @@ try {
 
 decompress(input).then(woff2 => {
   fs.writeFileSync(args.outfile[0], woff2);
+}, error => {
+  console.log(error);
 });

@@ -1,0 +1,28 @@
+OUT_DIR=../../build/brotli
+LIBCOMMON=$(OUT_DIR)/libbrotlicommon-static.bc
+LIBDEC=$(OUT_DIR)/libbrotlidec-static.bc
+LIBENC=$(OUT_DIR)/libbrotlienc-static.bc
+SRC_LIBCOMMON=c/common/*.c
+SRC_LIBDEC=c/dec/*.c
+SRC_LIBENC=c/enc/*.c
+INCLUDE=c/include
+
+.PHONY: all clean
+
+all: $(LIBCOMMON) $(LIBDEC) $(LIBENC)
+
+$(LIBCOMMON): $(OUT_DIR)
+	emcc -o $(LIBCOMMON) -I$(INCLUDE) $(SRC_LIBCOMMON)
+
+
+$(LIBDEC): $(OUT_DIR)
+	emcc -o $(LIBDEC) -I$(INCLUDE) $(SRC_LIBDEC)
+
+$(LIBENC): $(OUT_DIR)
+	emcc -o $(LIBENC) -I$(INCLUDE) $(SRC_LIBENC)
+
+$(OUT_DIR):
+	mkdir -p $(OUT_DIR)
+
+clean:
+	rm -rf OUT_DIR
