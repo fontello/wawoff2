@@ -1,11 +1,10 @@
 woff2 for node.js (via WebAssembly)
 ===================================
 
-That's an experiment of porting Google's [woff2](https://github.com/google/woff2)
-to node.js, using WebAssembly. Why this is better than binary bindings:
+Google's [woff2](https://github.com/google/woff2) build for `node.js`, using
+WebAssembly. Why this is better than binary bindings:
 
-- no need to compile on install
-- works everywhere
+- works everywhere without rebuild
 
 
 Install
@@ -28,19 +27,24 @@ wawoff.compress(src).then(out => {
 });
 ```
 
-From command line:
+
+Development
+-----------
+
+[Build emscripten]https://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_using_the_sdk.html) latest sources. Pre-built versions
+generated bad code for some reasons.
+
+- download emsdk and unpack to `~/emsdk-portable` folder
+- build latest version
 
 ```sh
-./bin/woff2_compress.js <src.ttf> <out.woff2>
-./bin/woff2_decompress.js <src.woff2> <out.ttf>
+cd ~/emsdk-portable
+./emsdk update
+./emsdk install sdk-incoming-64bit
+./emsdk activate sdk-incoming-64bit
 ```
 
-
-Build
------
-
-[Install emscripten](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html).
-
+- Clone repo, update deps and rebuild if needed
 
 ```
 git clone --recursive <path_to_repo>
@@ -48,8 +52,3 @@ cd wawoff2
 source emsdk_env.sh
 make clean all
 ```
-
-References
-----------
-
-https://github.com/google/woff2

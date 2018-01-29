@@ -14,6 +14,13 @@
   "scripts": {
     "test": "make test"
   },
+  "files": [
+    "compress.js",
+    "decompress.js",
+    "index.js",
+    "bin/",
+    "build/"
+  ],
   "dependencies": {
     "argparse": "^1.0.6"
   }
