@@ -24,7 +24,10 @@ brotli_c:
 fixtures:
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:src/brotli/buildfiles/installed/lib; src/woff2/woff2_compress/woff2_compress test/fixtures/sample.ttf
 
-test:
+lint:
+	./node_modules/.bin/eslint .
+
+test: lint
 	node_modules/.bin/mocha
 
 benchmark: files_exist
