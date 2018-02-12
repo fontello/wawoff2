@@ -1,6 +1,3 @@
 [submodule "src/woff2"]
 	path = src/woff2
 	url = https://github.com/google/woff2
-[submodule "src/brotli"]
-	path = src/brotli
-	url = https://github.com/google/brotli

@@ -14,9 +14,9 @@ BROTLI_OUT_DIR=../../build/brotli
 LIBBROTLICOMMON=$(BROTLI_OUT_DIR)/libbrotlicommon-static.bc
 LIBBROTLIDEC=$(BROTLI_OUT_DIR)/libbrotlidec-static.bc
 LIBBROTLIENC=$(BROTLI_OUT_DIR)/libbrotlienc-static.bc
-BROTLI_INCLUDE=../brotli/c/include
+BROTLI_INCLUDE=brotli/c/include
 
-CFLAGS=-std=gnu++11 -s 'ALLOW_MEMORY_GROWTH=1' -s 'EXTRA_EXPORTED_RUNTIME_METHODS=["cwrap"]' -O2
+CFLAGS=-std=gnu++11 -s 'ALLOW_MEMORY_GROWTH=1' -s 'EXTRA_EXPORTED_RUNTIME_METHODS=["cwrap"]' -O3
 EXPORT_ENC=-s 'EXPORTED_FUNCTIONS=["_main", "_malloc", "_free", "_compress", "_compressed_size"]'
 EXPORT_DEC=-s 'EXPORTED_FUNCTIONS=["_main", "_malloc", "_free", "_decompress", "_decompressed_size"]'
 
