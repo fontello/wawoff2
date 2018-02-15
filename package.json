@@ -1,6 +1,6 @@
 {
   "name": "wawoff2",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Convert TTF font to WOFF2",
   "keywords": [
     "font",
