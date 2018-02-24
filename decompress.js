@@ -18,7 +18,6 @@ module.exports = async function decompress(src) {
   let decompressed_size_wrap = em_module.cwrap('decompressed_size', 'number', [ 'number' ], [ 'number' ]);
   let outputSize = decompressed_size_wrap(inputPtr, inputSize);
   let outputPtr = em_module._malloc(outputSize);
-  let output = em_module.HEAPU8.subarray(outputPtr, outputPtr + outputSize);
 
   let decompress_wrap = em_module.cwrap('decompress', 'number', [ 'number' ], [ 'number' ], [ 'number' ]);
 
@@ -26,7 +25,7 @@ module.exports = async function decompress(src) {
     throw new Error('ConvertWOFF2ToTTF failed');
   }
 
-  let result = output.slice(0, outputSize);
+  let result = em_module.HEAPU8.slice(outputPtr, outputPtr + outputSize);
 
   em_module._free(inputPtr);
   em_module._free(outputPtr);
