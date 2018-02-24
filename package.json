@@ -14,6 +14,10 @@
   "scripts": {
     "test": "make test"
   },
+  "bin": {
+    "woff2_compress.js": "./bin/woff2_compress.js",
+    "woff2_decompress.js": "./bin/woff2_decompress.js"
+  },
   "files": [
     "compress.js",
     "decompress.js",
