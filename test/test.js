@@ -9,17 +9,18 @@ const wawoff2 = require('../');
 
 describe('chain', function () {
 
-  const ttf_file   = Uint8Array.from(read(join(__dirname, './fixtures/sample.ttf')));
-  const woff2_file = Uint8Array.from(read(join(__dirname, './fixtures/sample.woff2')));
+  const sample   = Uint8Array.from(read(join(__dirname, './fixtures/sample.ttf')));
+  const sample_compressed = Uint8Array.from(read(join(__dirname, './fixtures/sample_compressed.woff2')));
+  const sample_decompressed = Uint8Array.from(read(join(__dirname, './fixtures/sample_decompressed.ttf')));
 
   it('compress', async function () {
-    let out = await wawoff2.compress(ttf_file);
-    assert.deepEqual(out, woff2_file);
+    let out = await wawoff2.compress(sample);
+    assert.deepEqual(out, sample_compressed);
   });
 
   it('decompress', async function () {
-    let out = await wawoff2.decompress(woff2_file);
-    assert.deepEqual(out, ttf_file);
+    let out = await wawoff2.decompress(sample_compressed);
+    assert.deepEqual(out, sample_decompressed);
   });
 
 });
