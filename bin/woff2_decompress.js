@@ -8,6 +8,7 @@ const fs       = require('fs');
 const argparse = require('argparse');
 
 const decompress = require('../decompress');
+const { swap_ext } = require('./utils');
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -17,23 +18,34 @@ var parser = new argparse.ArgumentParser({
   addHelp:  true
 });
 
-parser.addArgument([ 'infile' ],  { nargs: 1, help: 'Input file' });
-parser.addArgument([ 'outfile' ], { nargs: 1, help: 'Output file' });
+parser.addArgument([ 'infile' ],  { nargs: 1, help: 'Input .woff2 file' });
+parser.addArgument([ 'outfile' ], { nargs: '?', help: 'Output .ttf file (- for stdout)' });
 
 ////////////////////////////////////////////////////////////////////////////////
 
 let args = parser.parseArgs();
+let infile = args.infile[0];
+let outfile = args.outfile;
 let input;
 
 try {
-  input = fs.readFileSync(args.infile[0]);
+  input = fs.readFileSync(infile);
 } catch (e) {
-  console.error(`Can't open input file (${args.infile[0]})`);
+  console.error(`Can't open input file (${infile})`);
   process.exit(1);
 }
 
-decompress(input).then(woff2 => {
-  fs.writeFileSync(args.outfile[0], woff2);
+decompress(input).then(ttf => {
+  if (outfile === '-') {
+    // convert UInt8Array into a disk writeable buffer
+    process.stdout.write(Buffer.from(ttf));
+  } else {
+    if (!outfile) {
+      outfile = swap_ext(infile, '.woff2', '.ttf');
+    }
+
+    fs.writeFileSync(outfile, ttf);
+  }
 }, error => {
   console.log(error);
 });
