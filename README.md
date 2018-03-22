@@ -30,6 +30,37 @@ wawoff.compress(src).then(out => {
 });
 ```
 
+Command-line Example
+--------------------
+
+To compress a `.ttf` file into a `.woff2` file:
+
+```bash
+woff2_compress.js [-h] [-v] infile [outfile]
+
+Positional arguments:
+  infile         Input .ttf file
+  outfile        Output .woff2 file (- for stdout)
+
+Optional arguments:
+  -h, --help     Show this help message and exit.
+  -v, --version  Show program's version number and exit.
+```
+
+And the opposite, to decompress a `.woff2` file into a `.ttf` one:
+
+```bash
+woff2_decompress.js [-h] [-v] infile [outfile]
+
+Positional arguments:
+  infile         Input .woff2 file
+  outfile        Output .ttf file (- for stdout)
+
+Optional arguments:
+  -h, --help     Show this help message and exit.
+  -v, --version  Show program's version number and exit.
+```
+
 
 Development
 -----------

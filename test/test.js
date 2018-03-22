@@ -14,6 +14,8 @@ describe('chain', function () {
   const sample_decompressed = Uint8Array.from(read(join(__dirname, './fixtures/sample_decompressed.ttf')));
 
   it('compress', async function () {
+    this.timeout(3000);
+
     let out = await wawoff2.compress(sample);
     assert.deepEqual(out, sample_compressed);
   });
