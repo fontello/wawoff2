@@ -65,7 +65,7 @@ Optional arguments:
 Development
 -----------
 
-[Build emscripten]https://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_using_the_sdk.html) latest sources. Pre-built versions
+[Build emscripten](https://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_using_the_sdk.html) latest sources. Pre-built versions
 generated bad code for some reasons.
 
 - download emsdk and unpack to `~/emsdk-portable` folder
