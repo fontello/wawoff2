@@ -22,7 +22,7 @@ Use Example
 -----------
 
 ```js
-const require('wawoff2');
+const wawoff = require('wawoff2');
 
 // src - Buffer or Uint8Array
 wawoff.compress(src).then(out => {
