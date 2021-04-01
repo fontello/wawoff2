@@ -12,7 +12,8 @@
   "license": "MIT",
   "repository": "fontello/wawoff2",
   "scripts": {
-    "test": "make test"
+    "build": "docker build -t wawoff2_build ./src && docker run --rm -v $(pwd):/src/wawoff2 -u $(id -u):$(id -g) -it wawoff2_build make -C /src/wawoff2/src",
+    "test": "eslint . && mocha ./test"
   },
   "bin": {
     "woff2_compress.js": "./bin/woff2_compress.js",

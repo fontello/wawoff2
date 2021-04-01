@@ -1,6 +1,6 @@
 'use strict';
 
-let em_module = require('./build/woff2/compress_binding.js');
+let em_module = require('./build/compress_binding.js');
 
 let runtimeInit = new Promise(resolve => {
   em_module['onRuntimeInitialized'] = resolve;

@@ -5,7 +5,6 @@
 
 #include <string>
 
-#include "file.h"
 #include <woff2/encode.h>
 
 #include <stdio.h>
