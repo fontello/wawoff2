@@ -1,7 +1,14 @@
+2.0.0 / WIP
+------------------
+
+- Refactor build process to use docker.
+- Rewrite bindings with `EMSCRIPTEN_BINDINGS`.
+
+
 1.0.2 / 2018-03-22
 ------------------
 
-- Improve CLI params support: single param & stdout. 
+- Improve CLI params support: single param & stdout.
 
 
 1.0.1 / 2018-02-24

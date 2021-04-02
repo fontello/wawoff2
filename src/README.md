@@ -1,0 +1,1 @@
+Use `npm run build` to rebuild sources.
