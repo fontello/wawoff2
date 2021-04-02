@@ -1,7 +1,7 @@
 woff2 for node.js (via WebAssembly)
 ===================================
 
-[![Build Status](https://img.shields.io/travis/fontello/wawoff2/master.svg?style=flat)](https://travis-ci.org/fontello/wawoff2)
+[![CI](https://github.com/fontello/wawoff2/actions/workflows/ci.yml/badge.svg)](https://github.com/fontello/wawoff2/actions/workflows/ci.yml)
 [![NPM version](https://img.shields.io/npm/v/wawoff2.svg?style=flat)](https://www.npmjs.org/package/wawoff2)
 
 Google's [woff2](https://github.com/google/woff2) build for `node.js`, using
