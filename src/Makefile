@@ -1,4 +1,4 @@
-CARGS=--bind -s ALLOW_MEMORY_GROWTH=1 -O3
+CARGS=--bind -s ALLOW_MEMORY_GROWTH=1 -s SINGLE_FILE=1 -O3
 FIXTURES=/src/wawoff2/test/fixtures
 
 all:
