@@ -27,7 +27,7 @@
     "build/"
   ],
   "dependencies": {
-    "argparse": "^1.0.6"
+    "argparse": "^2.0.1"
   },
   "devDependencies": {
     "mocha": "^8.3.2",

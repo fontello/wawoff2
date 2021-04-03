@@ -13,15 +13,26 @@ const { swap_ext } = require('./utils')
 
 const parser = new argparse.ArgumentParser({
   prog:     'woff2_compress.js',
-  version:  require('../package.json').version,
-  addHelp:  true
+  add_help:  true
 })
 
-parser.addArgument(['infile'],  { nargs: 1, help: 'Input .ttf file' })
-parser.addArgument(['outfile'], { nargs: '?', help: 'Output .woff2 file (- for stdout)' })
+parser.add_argument('-v', '--version', {
+  action: 'version',
+  version: require('../package.json').version
+})
+
+parser.add_argument('infile',  {
+  nargs: 1,
+  help: 'Input .ttf file'
+})
+
+parser.add_argument('outfile', {
+  nargs: '?',
+  help: 'Output .woff2 file (- for stdout)'
+})
 
 
-const args = parser.parseArgs()
+const args = parser.parse_args()
 const infile = args.infile[0]
 let outfile = args.outfile
 let input

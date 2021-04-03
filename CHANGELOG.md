@@ -3,6 +3,7 @@
 
 - Refactor build process to use docker.
 - Rewrite bindings with `EMSCRIPTEN_BINDINGS`.
+- Deps bump.
 
 
 1.0.2 / 2018-03-22
