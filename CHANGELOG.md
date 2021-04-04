@@ -1,4 +1,4 @@
-2.0.0 / WIP
+2.0.0 / 2021-04-04
 ------------------
 
 - Refactor build process to use docker.
