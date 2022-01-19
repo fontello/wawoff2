@@ -1,3 +1,10 @@
+2.0.1 / 2022-01-19
+------------------
+
+- Changed build options to keep node.js `uncaughtException` & `unhandledRejection`
+  handlers intact (#9).
+
+
 2.0.0 / 2021-04-04
 ------------------
 
